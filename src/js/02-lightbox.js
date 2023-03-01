@@ -4,7 +4,6 @@ const galleryContainer = document.querySelector('.gallery');
 const cardsMarkup = createGalleryCards(galleryItems);
 
 galleryContainer.insertAdjacentHTML('beforeend', cardsMarkup);
-galleryContainer.addEventListener('click', onGalleryContainerClick);
 
 
 
@@ -26,18 +25,9 @@ function createGalleryCards(galleryItems) {
 };
 
 
-
-
-function onGalleryContainerClick(event) {
-	event.preventDefault();
- 
-	if (event.target.nodeName !== "IMG"){
-	  return;
-	};
-	const gallery = new SimpleLightbox('.gallery a', {
-		captionsData: 'alt',
-		captionPosition: 'bottom',
-		captionDelay: 250,
-	});
-};
+const gallery = new SimpleLightbox('.gallery a', {
+	captionsData: 'alt',
+	captionPosition: 'bottom',
+	captionDelay: 250,
+});
 
